@@ -5,16 +5,19 @@ pipeline {
         stage('Dev') {
             steps {
                 echo 'Building..'
+				echo "Will deploy to ${params.DEPLOY_ENV}"
             }
         }
         stage('Cert') {
             steps {
                 echo 'Testing..'
+				echo "Will deploy to ${params.DEPLOY_ENV}"
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+				echo "Will deploy to ${params.DEPLOY_ENV}"
             }
         }
     }
