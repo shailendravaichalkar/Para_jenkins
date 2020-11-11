@@ -14,7 +14,7 @@ pipeline {
 				echo "Will deploy to ${params.DEPLOY_ENV}"
             }
         }
-        stage('Deploy') {
+        stage('PROD') {
             steps {
                 echo 'Deploying....'
 				echo "Will deploy to ${params.DEPLOY_ENV}"
