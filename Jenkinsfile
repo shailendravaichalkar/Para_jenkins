@@ -3,10 +3,6 @@ pipeline {
 
     stages {
         stage('Dev') {
-            steps {
-                echo 'RUNNING: Dev : Building in Dev Test 5..'
-				echo "Will deploy to ${params.BRANCH_NAME}"
-			}
             when {
                 // Only say hello if a "greeting" is requested
                 expression { params.BRANCH_NAME == 'dev' }
