@@ -2,21 +2,35 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Dev') {
+            when {
+                expression { params.BRANCH_NAME == 'dev' }
+            }
             steps {
-			    echo "Building as ${BRANCH_NAME}"
-                echo 'Building..'
+                echo "Hello, You are in dev!"
             }
         }
-        stage('Test') {
+        stage('Cert') {
+            when {
+                expression { params.BRANCH_NAME == 'main' }
+            }
             steps {
-                echo 'Testing 3..'
+                echo 'Testing..'
+				echo "Will deploy to ${params.BRANCH_NAME}"
             }
         }
-        stage('Deploy') {
+        stage('Prod') {
+            when {
+                expression { params.BRANCH_NAME == 'master' }
+            }
             steps {
-                echo 'Test 4 Deploying....'
+                echo "Hello, You are in PROD!"
+                echo 'Deploying....'
+				echo "Will deploy to ${params.BRANCH_NAME}"
             }
         }
     }
 }
+
+
+			
