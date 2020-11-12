@@ -56,13 +56,13 @@ pipeline {
                     // Determine whether this is a test or a staging / production build                    
                     switch (env.BRANCH_NAME) {
                         case 'develop':
-                            GLOBAL_ENVIRONMENT = 'test'
+                            GLOBAL_ENVIRONMENT = 'dev'
                             break
                         case 'master':
-                            GLOBAL_ENVIRONMENT = 'staging'
+                            GLOBAL_ENVIRONMENT = 'main'
                             break
                         default: 
-                            GLOBAL_ENVIRONMENT = 'NO_DEPLOYMENT'
+                            GLOBAL_ENVIRONMENT = 'master'
                             break
                     }
 
