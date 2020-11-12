@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+			    echo "Building as ${BRANCH_NAME}"
                 echo 'Building..'
             }
         }
