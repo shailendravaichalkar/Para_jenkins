@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Prod') {
             steps {
-                echo 'Deploying in Prod test 7....'
+                echo 'Deploying in Prod test 8....'
 				echo "Will deploy to ${params.BRANCH_NAME}"
             }
         }
