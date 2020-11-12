@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Dev') {
             steps {
-                echo 'Building in Dev Test 2..'
+                echo 'RUNNING: DEV : Building in Dev Test 2..'
 				echo "Will deploy to ${params.BRANCH_NAME}"
             }
         }
