@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Prod') {
             when {
-                expression { params.BRANCH_NAME == 'prod' }
+                expression { params.BRANCH_NAME == 'master' }
             }
             steps {
                 echo "Hello, You are in PROD!"
