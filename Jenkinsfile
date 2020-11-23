@@ -16,8 +16,10 @@ pipeline {
         }
         stage('Prod') {
             steps {
-                echo 'Deploying in Prod test 2....'
-				echo "Will deploy to ${params.BRANCH_NAME}"
+                timeout(time:5, unit:'DAYS'){
+                    input message:'Approve PRODUCTION Deployment?'
+                }
+                echo "Will deploy to ${params.BRANCH_NAME}"
             }
         }
     }
