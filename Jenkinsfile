@@ -25,6 +25,10 @@ pipeline {
             }
             steps {
                 echo "Hello, You are in PROD!"
+				timeout(time:5, unit:'DAYS'){
+                    input message:'Approve PRODUCTION Deployment?'
+                }
+                echo "Will deploy to ${params.BRANCH_NAME}"
                 echo 'Deploying....'
 				echo "Will deploy to ${params.BRANCH_NAME}"
             }
